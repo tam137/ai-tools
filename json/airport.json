@@ -1,0 +1,11 @@
+'{
+  "City": "string",
+  "IOAC": "string",
+  "Altitude": 0,
+  "Runways": [
+    {
+      "direction": "string",
+      "length": 0
+    }
+  ]
+'}

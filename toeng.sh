@@ -5,7 +5,7 @@ cd "$SCRIPT_DIR"
 WORKDIR="$PWD"
 
 
-#DESC translates a given input to spanish language
+#DESC translates a given input to english language
 
 
 read TEXT
@@ -17,4 +17,4 @@ if [ -z "$TEXT" ]; then
     exit 0
 fi
 
-translate "spanish" "$TEXT"
+translate "english" "$TEXT"
