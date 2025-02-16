@@ -14,3 +14,4 @@ gpt_4o_mini="gpt-4o-mini"       # 0.15/0.60
 
 AIRPORT_MODEL=${gpt_4o}
 TRANSLATION_MODEL=${gpt_4o_mini}
+ERR_EXPLANATION_MODEL=${gpt_4o_mini}

@@ -21,7 +21,7 @@ fi
 output=$(
   curl -s https://api.openai.com/v1/chat/completions \
     -H "Content-Type: application/json" \
-    -H "Authorization: Bearer $OPENAI_KEY" \
+    -H "Authorization: Bearer $AIRPORT_AI_KEY" \
     -d "$(cat <<EOF
 {
   "model": "$AIRPORT_MODEL",
@@ -42,4 +42,4 @@ EOF
 )"
 )
 
-echo "$output" | jq '.choices[].message.content | fromjson'
+echo "$output" | jq -r '.choices[].message.content | fromjson'
