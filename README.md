@@ -1,4 +1,7 @@
-Hi, this is my small collection of smaller AI tools.
+___
+
+### Hi,
+this is my small collection of smart AI tools.
 
 It's easy to use and ready to start!
 
@@ -8,25 +11,58 @@ It's good because you can just step in without much setup stuff, without install
 
 Some important files/folders are:
 
-func/ai-model-config.sh - Here you can configure the models for different AIs.
+* func/ai-model-config.sh - Here you can configure the models for different AIs.
 
-The folder /json is to place structured information for the AI output. It's hard to escape a JSON within a JSON request in bash, but I guess I did the hardest work already with the created model there...
+* The folder /json is to place structured information for the AI output.
 
 ## Setup
 Some prerequisites:
 
 * Uninstall Windows (you don't need it), use a Linux/Unix system.
-* Set environment variables (see below).
-* Check out this project.
+* Checkout this project.
 * Set some links to the AI files in /usr/local/bin for convenience.
+* Set environment variables (see below).
 
 export AIRPORT_AI_KEY={key}  
 export TRANSLATION_AI_KEY={key}  
 export ERR_EXPLANATION_AI_KEY={key}  
+export TLDR_AI_KEY={key}  
 
 You can, of course, use the same key if you don't want to differentiate it.
 
 ## The AIs
+
+### tldr-ai
+
+It works like the unix tool 'tldr' (explains unix tools). But uses AI.
+
+```
+tam137 | ~/git/ai-agents ❥ tldr-ai tldr
+tldr is a command-line tool that provides simplified and community-driven man pages for common command-line utilities. It offers practical examples and usage scenarios for quick reference. Use `tldr <command>` to get a brief overview and examples for that command.
+```
+
+```
+tam137 | ~/git/ai-agents ❥ tldr-ai cat
+`cat` - Concatenate and display file contents.
+
+### Usage
+- Display file content:  
+  `cat filename`
+
+- Concatenate multiple files:  
+  `cat file1 file2 > output_file`
+
+- Show line numbers:  
+  `cat -n filename`
+
+- Append to a file:  
+  `cat >> existing_file`
+
+### Options
+- `-n`: Number all output lines.
+- `-E`: Show `$` at the end of each line.
+- `-b`: Number non-blank output lines only.
+```
 
 ### airport-ai
 
