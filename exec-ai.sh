@@ -4,23 +4,16 @@ SCRIPT_DIR="$(dirname "$(readlink -f "$0")")"
 cd "$SCRIPT_DIR"
 WORKDIR="$PWD"
 
-#DESC gives a brief usage explanation of unix tools
+#DESC execute shell commands rquested by user
 
 source ./func/ai-model-config.sh
 
-PROG_NAME=""
+TEXT=$(cat)
 
-if [[ -z "$1" ]]; then
-    read PROG_NAME
-else
-    PROG_NAME="$1"
-fi
-
-if [[ -z "$PROG_NAME" ]]; then
+if [ -z "$TEXT" ]; then
     echo "$NO_CONTENT"
     exit 0
 fi
-
 
 output=$(
   curl -s https://api.openai.com/v1/chat/completions \
@@ -28,15 +21,15 @@ output=$(
     -H "Authorization: Bearer $TLDR_AI_KEY" \
     -d "$(cat <<EOF
 {
-  "model": "$TLDR_MODEL",
+  "model": "$EXEC_MODEL",
   "messages": [
     {
       "role": "system",
-      "content": "You emulate the UNIX tool tldr. Be brief."
+      "content": "You are a Linux Console Assistant. Provide requested commands only. No embeds."
     },
     {
       "role": "user",
-      "content": "tldr $PROG_NAME"
+      "content": "$TEXT"
     }
   ]
 }
@@ -44,4 +37,4 @@ EOF
 )"
 )
 
-echo "$output" | jq -r .choices[].message.content
+echo "$output" | jq '.choices[].message.content' | jq -r

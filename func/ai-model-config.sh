@@ -17,3 +17,5 @@ AIRPORT_MODEL=${gpt_4o}
 TRANSLATION_MODEL=${gpt_4o_mini}
 ERR_EXPLANATION_MODEL=${gpt_4o_mini}
 TLDR_MODEL=${gpt_4o_mini}
+BSG_PARSER_MODEL=${gpt_4o_mini}
+EXEC_MODEL=${gpt_4o_mini}

@@ -64,6 +64,30 @@ tam137 | ~/git/ai-agents ❥ tldr-ai cat
 - `-b`: Number non-blank output lines only.
 ```
 
+### exec-ai
+
+Provides a Unix command for the purpose the user requests.
+```
+tam137 | ~/git/ai-agents ❥ echo "Show me my used ram" | exec-ai
+free -h
+```
+
+Works perfectly with tldr-ai.
+```
+tam137 | ~/git ❥ echo "list all files and folders" | exec-ai | tldr-ai 
+Display detailed information about all files and directories, including hidden ones.
+
+**Usage:**
+ls -al [DIRECTORY]
+
+**Options:**
+- `-a`: Show all files, including hidden ones (starting with `.`).
+- `-l`: Use a long listing format, showing permissions, owner, size, and modification date.
+
+**Example:**
+ls -al
+```
+
 ### airport-ai
 
 Gives structured information for a given airport. The use case is obvious: you need to know where to land!
