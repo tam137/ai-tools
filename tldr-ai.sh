@@ -32,7 +32,7 @@ output=$(
   "messages": [
     {
       "role": "system",
-      "content": "You emulate the UNIX tool tldr. Be brief."
+      "content": "You emulate the UNIX tool tldr. Be brief. Never use Markdown formatting, including backticks (\`) or code blocks."
     },
     {
       "role": "user",

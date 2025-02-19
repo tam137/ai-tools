@@ -37,31 +37,30 @@ You can, of course, use the same key if you don't want to differentiate it.
 It works like the unix tool 'tldr' (explains unix tools). But uses AI.
 
 ```
-tam137 | ~/git/ai-agents ❥ tldr-ai tldr
-tldr is a command-line tool that provides simplified and community-driven man pages for common command-line utilities. It offers practical examples and usage scenarios for quick reference. Use `tldr <command>` to get a brief overview and examples for that command.
+tam137 | ~/git/ai-agents ❥ tldr-ai "ls"
+Usage:
+- `ls` - list files and directories.
+- `ls -l` - detailed (long) list with permissions and sizes.
+- `ls -a` - include hidden files (starting with .).
+- `ls -h` - human-readable sizes.
+- `ls -R` - recursive listing of directories.
+
+Common options:
+- `-t` - sort by modification time.
+- `-S` - sort by file size.
+- `-r` - reverse order.
 ```
 
 ```
-tam137 | ~/git/ai-agents ❥ tldr-ai cat
-`cat` - Concatenate and display file contents.
+tam137 | ~/git/ai-agents ❥ tldr-ai "git rebase"
+Git rebase is used to move or combine a sequence of commits to a new base commit. It helps to maintain a clean project history.
 
-### Usage
-- Display file content:  
-  `cat filename`
+Basic usage:
+1. Start a rebase: git rebase <base-branch>
+2. Resolve conflicts if any, then use: git rebase --continue
+3. Abort the rebase: git rebase --abort
 
-- Concatenate multiple files:  
-  `cat file1 file2 > output_file`
-
-- Show line numbers:  
-  `cat -n filename`
-
-- Append to a file:  
-  `cat >> existing_file`
-
-### Options
-- `-n`: Number all output lines.
-- `-E`: Show `$` at the end of each line.
-- `-b`: Number non-blank output lines only.
+Useful for integrating changes or linearizing commit history.
 ```
 
 ### exec-ai
