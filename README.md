@@ -7,20 +7,22 @@ It's easy to use and ready to start!
 
 ## Why it's good?
 
-It's good because you can just step in without much setup stuff, without installing runtimes or compiling binaries. Everything is bash. You can configure the AI behavior right in the files and integrate in your everyday processes!
+It's good because you can just step in without much setup stuff, without installing runtimes or compiling binaries. Everything is bash. You can configure the AI behavior right in the files.
+
+All agent files use stdin and stdout, so you can pipe them in a chain and integrate into your everyday processes!
 
 Some important files/folders are:
 
-* func/ai-model-config.sh - Here you can configure the models for different AIs.
+* ```func/ai-model-config.sh``` - Here you can configure the models for different AIs.
 
-* The folder /json is to place structured information for the AI output.
+* The folder ```/json``` is to place structured information for the AI output.
 
 ## Setup
 Some prerequisites:
 
 * Uninstall Windows (you don't need it), use a Linux/Unix system.
 * Checkout this project.
-* Set some links to the AI files in /usr/local/bin for convenience.
+* Set some links to the AI files in ```/usr/local/bin``` for convenience.
 * Set environment variables (see below).
 
 export AIRPORT_AI_KEY={key}  
@@ -34,7 +36,8 @@ You can, of course, use the same key if you don't want to differentiate it.
 
 ### tldr-ai
 
-It works like the unix tool 'tldr' (explains unix tools). But uses AI.
+It works like the unix tool 'tldr' (explains unix tools). But uses AI.  
+It has also a verbose switch ```tldr-ai -v```
 
 ```
 tam137 | ~/git/ai-agents ❥ tldr-ai "ls"

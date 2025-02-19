@@ -10,6 +10,32 @@ source ./func/ai-model-config.sh
 
 PROG_NAME=""
 
+usage() {
+    echo -e "Usage:
+    help        -h
+    verbose     -v"
+    exit 0;
+}
+
+PROMPT="You emulate the UNIX tool tldr. Be brief. Never use Markdown formatting, including backticks (\`) or code blocks."
+
+while getopts "hv" o; do
+    case "${o}" in
+        h)
+            usage
+            exit 0
+            ;;
+        v)
+            PROMPT="You emulate the UNIX tool tldr. Elaborate various functions with examples of the command. Never use Markdown formatting, including backticks (\`) or code blocks."
+            ;;
+        *)
+            usage
+            exit 0
+            ;;
+    esac
+done
+shift $((OPTIND - 1))
+
 if [[ -z "$1" ]]; then
     read PROG_NAME
 else
@@ -22,6 +48,8 @@ if [[ -z "$PROG_NAME" ]]; then
 fi
 
 
+
+
 output=$(
   curl -s https://api.openai.com/v1/chat/completions \
     -H "Content-Type: application/json" \
@@ -32,11 +60,11 @@ output=$(
   "messages": [
     {
       "role": "system",
-      "content": "You emulate the UNIX tool tldr. Be brief. Never use Markdown formatting, including backticks (\`) or code blocks."
+      "content": "$PROMPT"
     },
     {
       "role": "user",
-      "content": "tldr $PROG_NAME"
+      "content": "$PROG_NAME"
     }
   ]
 }
